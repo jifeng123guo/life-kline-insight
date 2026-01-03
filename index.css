@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+    --color-border: hsl(var(--border));
+    --color-input: hsl(var(--input));
+    --color-ring: hsl(var(--ring));
+    --color-background: hsl(var(--background));
+    --color-foreground: hsl(var(--foreground));
+
+    --animate-slide-up: slide-up 0.5s ease-out forwards;
+    --animate-fade-in: fade-in 0.8s ease-out forwards;
+
+    @keyframes slide-up {
+        0% {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@layer base {
+    body {
+        @apply bg-[#F5F5F7] text-[#1D1D1F] antialiased;
+    }
+}
+
+@layer components {
+    .glass-panel {
+        @apply bg-white/75 backdrop-blur-[20px] border border-white/50 rounded-3xl;
+    }
+}
